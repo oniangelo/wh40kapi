@@ -2,7 +2,7 @@
     "name": "wh40kapi",
     "version": "1.0.0",
     "description": "WH40K Army Builder",
-    "main": "index.ts",
+    "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node index.js"
