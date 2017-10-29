@@ -14,7 +14,15 @@ app.use(bodyParser.json());
 
 
 var routes = require('./routes/wh40kabRoutes'); //importing route
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 routes(app); //register the route
+
+
 
 db = new sqlite3.Database('./db/ArmyList.sqlite', (err) => {
     if (err) {
