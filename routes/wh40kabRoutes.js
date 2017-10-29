@@ -3,7 +3,7 @@ module.exports = function(app) {
     var armybuilder = require('../controllers/wh40kabController');
 
     // armybuilder Routes
-    app.route('/api/getArmyIndex')
+    app.route('/api/getArmyIndex/:factionId')
         .get(armybuilder.getArmyIndex);
 
 
