@@ -3,9 +3,8 @@ module.exports = function(app) {
     var armybuilder = require('../controllers/wh40kabController');
 
     // armybuilder Routes
-    app.route('/tasks')
-        .get(armybuilder.list_all_tasks)
-        .post(armybuilder.create_a_task);
+    app.route('/getArmyIndex')
+        .get(armybuilder.getArmyIndex());
 
 
     app.route('/tasks/:taskId')
