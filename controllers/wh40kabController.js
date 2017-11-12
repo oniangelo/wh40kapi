@@ -3,6 +3,7 @@ exports.getArmyIndex = function(req, res) {
      inner join Units_Factions uf on u.id == uf.unitId \
      where uf.factionId =';
     sql = sql + req.params.factionId;
+    sql = sql + ' and u.battlefieldRole =' + req.params.roleId;
     var list = [];
     db.all(sql, [], (err, rows) => {
         if (err) {
@@ -14,13 +15,4 @@ exports.getArmyIndex = function(req, res) {
         });
         res.json(list);
     });
-    //var list = [{ id: 1, name: "Sammael", role: '1' }, { id: 2, name: "Ezekiel", role: '1' }];
-
-
-
-    // Task.findById(req.params.armyId, function(err, task) {
-    //     if (err)
-    //         res.send(err);
-    //     res.json(task);
-    // });
 };
