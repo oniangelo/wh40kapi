@@ -17,7 +17,7 @@ exports.getArmyIndex = function(req, res) {
     });
 };
 exports.getBellicRoles = function(req,res){
-    let q = "SELECT * FROM BattlefieldRole";
+    let q = "SELECT * FROM BattlefieldRoles";
     var roles =[];
     db.all(q,[],(err,rows)=>{
         if(err){
@@ -26,6 +26,7 @@ exports.getBellicRoles = function(req,res){
         rows.forEach((row)=> {
             roles.push({id: row.id,name:row.name});
         });
+        res.json(roles);
     });
-    res.json(roles);
+    
 }
