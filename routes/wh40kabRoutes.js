@@ -6,7 +6,8 @@ module.exports = function(app) {
     app.route('/api/getArmyIndex/:factionId/role/:roleId')
         .get(armybuilder.getArmyIndex);
 
-
+    app.route('/api/getRoles/')
+    .getArmyIndex(armybuilder.getBellicRoles);
     // app.route('/tasks/:taskId')
     //     .get(armybuilder.read_a_task)
     //     .put(armybuilder.update_a_task)

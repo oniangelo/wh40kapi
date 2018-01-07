@@ -16,3 +16,16 @@ exports.getArmyIndex = function(req, res) {
         res.json(list);
     });
 };
+exports.getBellicRoles = function(req,res){
+    let q = "SELECT * FROM BattlefieldRole";
+    var roles =[];
+    db.all(q,[],(err,rows)=>{
+        if(err){
+            throw err;
+        }
+        rows.forEach((row)=> {
+            roles.push({id: row.id,name:row.name});
+        });
+    });
+    res.json(roles);
+}
